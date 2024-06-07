@@ -71,6 +71,10 @@ $CantidadUsuarios = count($ListadoUsuarios);
     .filter-bar .form-control {
       width: 200px;
     }
+    .pagination button {
+        margin-right: 10px; /* Ajusta este valor según el espacio deseado */
+        margin-left: 10px; /* Ajusta este valor según el espacio deseado */
+    }
   </style>
 </head>
 <body>
@@ -206,7 +210,7 @@ $CantidadUsuarios = count($ListadoUsuarios);
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">Codigo de Socio</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Nombre y Apellido</th>
                     <th scope="col">Dni</th>
                     <th scope="col">Direccion</th>
@@ -229,6 +233,12 @@ $CantidadUsuarios = count($ListadoUsuarios);
                 </tbody>
               </table>
               <!-- End Default Table Example -->
+                         <!-- Botones de paginación -->
+                <div class="pagination d-flex justify-content-center">
+                    <button id="prev-page" disabled>&lt;</button>
+                    <span id="page-num">  1  </span>
+                    <button id="next-page">&gt;</button>
+                </div>
             </div>
           </div>
         </div>
@@ -303,6 +313,69 @@ $CantidadUsuarios = count($ListadoUsuarios);
         row.contentEditable = row.isContentEditable ? 'false' : 'true';
       });
       this.textContent = this.textContent === 'Modo Edición' ? 'Salir de Edición' : 'Modo Edición';
+    });
+  </script>
+
+  <script>
+        // Variables para controlar la paginación
+    let currentPage = 1;
+    const recordsPerPage = 10;
+    const totalRecords = <?php echo $CantidadUsuarios; ?>;
+    const totalPages = Math.ceil(totalRecords / recordsPerPage);
+
+    // Función para mostrar los registros de la página actual
+    function displayRecords(page) {
+    let startIndex = (page - 1) * recordsPerPage;
+    let endIndex = startIndex + recordsPerPage;
+    let slicedRecords = <?php echo json_encode(array_slice($ListadoUsuarios, 0, $CantidadUsuarios)); ?>;
+    let output = '';
+    
+    for (let i = startIndex; i < endIndex && i < totalRecords; i++) {
+        output += `
+        <tr>
+            <td>${slicedRecords[i]['ID']}</td>
+            <td>${slicedRecords[i]['NOMBRE']} ${slicedRecords[i]['APELLIDO']}</td>
+            <td>${slicedRecords[i]['DNI']}</td>
+            <td>${slicedRecords[i]['DIRECCION']}</td>
+            <td>${slicedRecords[i]['EMAIL']}</td>
+            <td>${slicedRecords[i]['TELEFONO']}</td>
+            <td>${slicedRecords[i]['MEMBRESIA']}</td>
+        </tr>
+        `;
+    }
+
+    document.getElementById('socios-table').innerHTML = output;
+    }
+
+    // Mostrar registros de la primera página al cargar la página
+    window.addEventListener('load', function() {
+    displayRecords(currentPage);
+    });
+
+    // Event listener para el botón "Siguiente"
+    document.getElementById('next-page').addEventListener('click', function() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        displayRecords(currentPage);
+        document.getElementById('page-num').textContent = `Página ${currentPage}`;
+        document.getElementById('prev-page').disabled = false;
+    }
+    if (currentPage === totalPages) {
+        this.disabled = true;
+    }
+    });
+
+    // Event listener para el botón "Anterior"
+    document.getElementById('prev-page').addEventListener('click', function() {
+    if (currentPage > 1) {
+        currentPage--;
+        displayRecords(currentPage);
+        document.getElementById('page-num').textContent = `${currentPage}`;
+        document.getElementById('next-page').disabled = false;
+    }
+    if (currentPage === 1) {
+        this.disabled = true;
+    }
     });
   </script>
 
