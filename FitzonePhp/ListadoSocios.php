@@ -53,6 +53,33 @@ $CantidadUsuarios = count($ListadoUsuarios);
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .sidebar {
+      background-color: #96caff;
+    }
+    .sidebar-nav .nav-link {
+      color: blue;
+    }
+    .sidebar-nav .nav-content .nav-item .nav-link {
+      padding-left: 30px;
+    }
+    .main {
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    .card {
+      background-color: #96caff;
+    }
+    .card-title {
+      color: #fff;
+    }
+    .form-label {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -127,22 +154,14 @@ $CantidadUsuarios = count($ListadoUsuarios);
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="inde.php">
-          <i class="bi bi-grid"></i>
-          <span>Panel</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-
       <li class="nav-item">
         <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-person"></i><span>Socios</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="CargarNuevoSocio.php" class="active">
-            <i class="bi bi-file-earmark-plus"></i><span>Cargar Nuevo Socio</span>
+            <a href="AltaSocio.php" class="active">
+            <i class="bi bi-file-earmark-plus"></i><span>Registrar Nuevo Socio</span>
             </a>
           </li>
           <li>
@@ -164,7 +183,7 @@ $CantidadUsuarios = count($ListadoUsuarios);
         <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-cash-coin"></i><span>Membresias</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+        <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
             <a href="viaje_carga.php" class="active">
             <i class="bi bi-file-earmark-plus"></i><span>Cargar Nueva Membresia</span>
@@ -204,7 +223,7 @@ $CantidadUsuarios = count($ListadoUsuarios);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Socios cargados</h5>
+              <h5 class="card-title">Socios Registrados</h5>
 
               <!-- Default Table -->
               <table class="table table-hover">
