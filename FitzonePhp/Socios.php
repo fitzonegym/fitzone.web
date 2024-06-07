@@ -357,7 +357,7 @@ $CantidadUsuarios = count($ListadoUsuarios);
     if (currentPage < totalPages) {
         currentPage++;
         displayRecords(currentPage);
-        document.getElementById('page-num').textContent = `Página ${currentPage}`;
+        document.getElementById('page-num').textContent = `${currentPage}`;
         document.getElementById('prev-page').disabled = false;
     }
     if (currentPage === totalPages) {
