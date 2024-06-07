@@ -190,12 +190,12 @@ $CantidadUsuarios = count($ListadoUsuarios);
             <div class="card-body">
               <h5 class="card-title">Socios Registrados</h5>
               <div class="filter-bar">
-                <input type="text" class="form-control" id="search" placeholder="Buscar...">
+                <input type="text" class="form-control" id="search" placeholder="Buscar por nombre..">
                 <select class="form-control" id="filter">
                   <option value="">Filtrar por...</option>
-                  <option value="Nombre">Nombre</option>
-                  <option value="Dni">Dni</option>
-                  <option value="Email">Email</option>
+                  <option value="Membresia1">Membresia 1</option>
+                  <option value="Membresia2">Membresia 2</option>
+                  <option value="Membresia3">Membresia 3</option>
                 </select>
                 <select class="form-control" id="sort">
                   <option value="">Ordenar por...</option>
