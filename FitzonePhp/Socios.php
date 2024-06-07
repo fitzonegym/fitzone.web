@@ -319,7 +319,7 @@ $CantidadUsuarios = count($ListadoUsuarios);
   <script>
         // Variables para controlar la paginación
     let currentPage = 1;
-    const recordsPerPage = 10;
+    const recordsPerPage = 9;
     const totalRecords = <?php echo $CantidadUsuarios; ?>;
     const totalPages = Math.ceil(totalRecords / recordsPerPage);
 
