@@ -37,10 +37,6 @@ if(!empty($_GET['BotonIngreso'])){
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -68,6 +64,14 @@ if(!empty($_GET['BotonIngreso'])){
     .btn-primary:hover {
       background-color: #218838;
     }
+    .logo img {
+      max-width: 400px; /* Ajusta el ancho máximo de la imagen */
+      max-height: 400px; /* Ajusta la altura máxima de la imagen */
+      width: auto;
+      height: auto;
+      margin-top: -100px; /* Sacar espacio de arriba */
+      margin-bottom: -60px; /* Sacar espacio entre la imagen y el card */
+    }
   </style>
 
 </head>
@@ -82,10 +86,10 @@ if(!empty($_GET['BotonIngreso'])){
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-              <div class="d-flex justify-content-center py-4">
-                <a href="homr.php" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">Fitzone Gym</span>
+            <div class="d-flex justify-content-center py-4">
+                <a href="home.php" class="logo d-flex flex-column align-items-center w-auto">
+                  <!-- Aquí se agrega la imagen encima del título "Fitzone Gym" -->
+                  <img src="assets/img/logofitzone.png" alt="Imagen" class="img-fluid">
                 </a>
               </div>
 

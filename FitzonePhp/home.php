@@ -140,19 +140,13 @@ if(empty($_SESSION['Usuario_Nombre'])){
         <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
             <a href="AltaSocio.php" class="active">
-              <i class="bi bi-file-earmark-plus"></i><span>Registrar Nuevo Socio</span>
+              <i class="bi bi-file-earmark-plus"></i><span>Registrar nuevo socio</span>
             </a>
           </li>
           <li>
-            <a href="ConsultarSocio.php" class="active">
-              <i class="bi bi-file-earmark-plus"></i><span>Consultar Socio</span>
+            <a href="Socios.php" class="active">
+              <i class="bi bi-file-earmark-plus"></i><span>Listado de socios</span>
             </a>
-          </li>
-          <li>
-            <a href="ListadoSocios.php" class="active">
-              <i class="bi bi-file-earmark-plus"></i><span>Listado de Socios</span>
-            </a>
-          </li>
         </ul>
       </li><!-- End Socios Nav -->
 

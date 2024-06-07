@@ -148,13 +148,8 @@ if(!empty($_GET['BotonLimpiar']))
             </a>
           </li>
           <li>
-            <a href="ConsultarSocio.php" class="active">
-              <i class="bi bi-file-earmark-plus"></i><span>Consultar Socio</span>
-            </a>
-          </li>
-          <li>
-            <a href="ListadoSocios.php" class="active">
-              <i class="bi bi-file-earmark-plus"></i><span>Listado de Socios</span>
+            <a href="Socios.php" class="active">
+              <i class="bi bi-file-earmark-plus"></i><span>Listado de socios</span>
             </a>
           </li>
         </ul>
@@ -166,7 +161,7 @@ if(!empty($_GET['BotonLimpiar']))
         <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
             <a href="viaje_carga.php" class="active">
-              <i class="bi bi-file-earmark-plus"></i><span>Registrar Nueva Membresia</span>
+              <i class="bi bi-file-earmark-plus"></i><span>Registrar nueva membresia</span>
             </a>
           </li>
           <li>
