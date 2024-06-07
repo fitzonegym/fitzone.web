@@ -203,6 +203,8 @@ $CantidadUsuarios = count($ListadoUsuarios);
                   <option value="NombreDesc">Nombre Descendente</option>
                   <option value="DniAsc">Dni Ascendente</option>
                   <option value="DniDesc">Dni Descendente</option>
+                  <option value="IdAsc">Id Ascendente</option>
+                  <option value="IdDesc">Id Descendente</option>
                 </select>
                 <button class="btn btn-primary" id="edit-mode">Modo Edición</button>
               </div>
@@ -292,20 +294,45 @@ $CantidadUsuarios = count($ListadoUsuarios);
     });
 
     document.getElementById('sort').addEventListener('change', function() {
-      let sortType = this.value;
-      let rows = Array.from(document.querySelectorAll('#socios-table tr'));
-      let tbody = document.getElementById('socios-table');
-      rows.sort((a, b) => {
-        let aText = a.cells[sortType.includes('Nombre') ? 1 : 2].textContent.toUpperCase();
-        let bText = b.cells[sortType.includes('Nombre') ? 1 : 2].textContent.toUpperCase();
-        if (sortType.includes('Asc')) {
-          return aText.localeCompare(bText);
-        } else {
-          return bText.localeCompare(aText);
+    let sortType = this.value;
+    let rows = Array.from(document.querySelectorAll('#socios-table tr'));
+    let tbody = document.getElementById('socios-table');
+    rows.sort((a, b) => {
+        let aText, bText;
+        if (sortType.includes('Nombre')) {
+            // Obtener el nombre completo de cada celda
+            let aName = a.cells[1].textContent.toUpperCase();
+            let bName = b.cells[1].textContent.toUpperCase();
+            // Comparar los nombres
+            if (sortType.includes('Asc')) {
+                return aName.localeCompare(bName); // Ascendente
+            } else {
+                return bName.localeCompare(aName); // Descendente
+            }
+        } else if (sortType.includes('Dni')) {
+            // Comparar los DNIs como números
+            aText = parseInt(a.cells[2].textContent, 10); 
+            bText = parseInt(b.cells[2].textContent, 10);
+        } else if (sortType.includes('Id')) {
+            // Comparar los IDs como números
+            aText = parseInt(a.cells[0].textContent, 10);
+            bText = parseInt(b.cells[0].textContent, 10);
         }
-      });
-      rows.forEach(row => tbody.appendChild(row));
+        // Devolver la comparación según el tipo de orden y el tipo de dato
+        if (sortType.includes('Asc')) {
+            return aText - bText;
+        } else {
+            return bText - aText;
+        }
     });
+    // Limpiar la tabla y agregar las filas ordenadas
+    rows.forEach(row => tbody.appendChild(row));
+});
+
+
+
+
+
 
     document.getElementById('edit-mode').addEventListener('click', function() {
       let rows = document.querySelectorAll('#socios-table tr');
