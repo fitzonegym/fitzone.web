@@ -187,22 +187,76 @@ if(empty($_SESSION['Usuario_Nombre'])){
         <!-- Left side columns -->
         <div class="col-lg-12">
           <div class="row">
-            <!-- Customers Card -->
-            <div class="col-xxl-12 col-xl-12">
-              <div class="card info-card customers-card">
+            <!-- Socios Card -->
+            <div class="col-xxl-6 col-xl-6">
+              <div class="card info-card">
                 <div class="card-body">
-                  <h5 class="card-title">Panel del Gimnasio-Fitzone <span> Lo mejor para tu salud!</span></h5>
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
+                  <h5 class="card-title">Socios</h5>
+                  <div class="d-flex flex-column">
+                    <div class="card mini-card mb-2">
+                      <a href="AltaSocio.php" class="nav-link">
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-person-plus"></i>
+                          </div>
+                          <div class="ps-3">
+                            <span>Registrar nuevo socio</span>
+                          </div>
+                        </div>
+                      </a>
                     </div>
-                    <div class="ps-3">
-                      <span class="text-danger small pt-1 fw-bold">Puedes seleccionar el menu de la izquierda</span>
+                    <div class="card mini-card">
+                      <a href="Socios.php" class="nav-link">
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-person-lines-fill"></i>
+                          </div>
+                          <div class="ps-3">
+                            <span>Listado de socios</span>
+                          </div>
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
-            </div><!-- End Customers Card -->
+            </div><!-- End Socios Card -->
+
+            <!-- Membresias Card -->
+            <div class="col-xxl-6 col-xl-6">
+              <div class="card info-card">
+                <div class="card-body">
+                  <h5 class="card-title">Membresías</h5>
+                  <div class="d-flex flex-column">
+                    <div class="card mini-card mb-2">
+                      <a href="viaje_carga.php" class="nav-link">
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-journal-plus"></i>
+                          </div>
+                          <div class="ps-3">
+                            <span>Cargar nueva membresía</span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="card mini-card">
+                      <a href="viajes_listado.php" class="nav-link">
+                        <div class="d-flex align-items-center">
+                          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-journal-check"></i>
+                          </div>
+                          <div class="ps-3">
+                            <span>Listado de membresías</span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Membresias Card -->
+
           </div>
         </div><!-- End Left side columns -->
       </div>
